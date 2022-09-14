@@ -1,35 +1,18 @@
 pipeline {
-    agent any 
+    agent linux 
     stages {
     stage('maven install') {
       steps {
 
-        sh 'mvn clean install'
-
+        
+        withMaven(maven: 'maven3') {
+            // some block
+            sh 'mvn clean install'
+        }
       }
     }
 
   }
     
-        stages {
-  stage('build') {
-    steps {
-        echo 'Building pipeline...'
-    }
-  }
 
-  stage('test') {
-    steps {
-        echo 'Testing pipeline ...'
-    }
-  }
-
-  stage('deploy') {
-    steps {
-        echo 'Deploying pipeline ...'
-        echo 'Done!'
-    }
-  }
-
-}
 }
