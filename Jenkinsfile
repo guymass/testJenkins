@@ -5,7 +5,7 @@ pipeline {
       steps {
 
         
-        withMaven(globalMavenSettingsConfig: 'null', jdk: 'null', maven: 'null', mavenSettingsConfig: 'null') {
+        withMaven {
             sh 'mvn clean install'
     }
 
