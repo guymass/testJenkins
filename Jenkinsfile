@@ -5,34 +5,14 @@ pipeline {
       steps {
 
         
-        withMaven {
+        withMaven(globalMavenSettingsConfig: 'null', jdk: 'null', maven: 'maven3', mavenSettingsConfig: 'null') {
+            // some block
             sh 'mvn clean install'
-    }
-
+        }
       }
     }
 
   }
     
-        stages {
-  stage('build') {
-    steps {
-        echo 'Building pipeline...'
-    }
-  }
-
-  stage('test') {
-    steps {
-        echo 'Testing pipeline ...'
-    }
-  }
-
-  stage('deploy') {
-    steps {
-        echo 'Deploying pipeline ...'
-        echo 'Done!'
-    }
-  }
-
 
 }
