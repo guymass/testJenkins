@@ -10,4 +10,26 @@ pipeline {
     }
 
   }
+    
+        stages {
+  stage('build') {
+    steps {
+        echo 'Building pipeline...'
+    }
+  }
+
+  stage('test') {
+    steps {
+        echo 'Testing pipeline ...'
+    }
+  }
+
+  stage('deploy') {
+    steps {
+        echo 'Deploying pipeline ...'
+        echo 'Done!'
+    }
+  }
+
+}
 }
